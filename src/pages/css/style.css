@@ -1,0 +1,100 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+
+    
+}
+.title {
+    font-weight: bold;
+    font-size: 2.5rem;
+    font-family: Arial, sans-serif;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+    background-color: rgb(0, 0, 0);
+    padding: 30px 0px;
+    width: 100%;
+    margin-top: 0px;
+    color: azure;
+}
+nav{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    gap: 140px;
+}
+nav  a{
+    font-size: large;
+    text-decoration: none;
+    color: black;
+    font-family:monospace;
+    font-size: xx-large;
+    background-color: rgb(158, 193, 235);
+    padding: 70px 40px;
+    border-radius: 30px;
+    cursor: crosshair;
+}
+nav button{
+    padding: 50px 60px;
+    display: flexbox;
+        align-items: center;
+        justify-content: center;
+    background-color: cadetblue;
+    border-radius: 10px;
+}
+nav a:hover{
+    transform: scale(1.1);
+        transition:1s;
+    border-color: black;
+    border-width: 2px;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* Circle 1 */
+.circle1 {
+  width: 300px;
+  height: 300px;
+  background: #6ee89f;
+  top: 200px;
+  left: 150px;
+}
+
+/* Circle 2 */
+.circle2 {
+  width: 100px;
+  height: 100px;
+  background: #072a66;
+  bottom: 80px;
+  right: 120px;
+  animation-duration: 5s;
+  animation-name: spin;
+  animation-timing-function: ease;
+animation-iteration-count: infinite;
+}
+@keyframes spin{
+    0%{
+
+    }
+
+    50%{
+        scale:1.3;
+        height: 50px;
+        transform: translateY(-300%);
+        opacity: .3;
+        box-shadow: 0px 0px 90px purple;
+    }
+    100%{
+        background-color: rgb(0, 0, 0);
+        border-width: 100px;
+        margin-top: 50px;
+    }
+
+}
