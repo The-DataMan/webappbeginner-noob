@@ -1,0 +1,1 @@
+export const bruh=['russia','ukraine','france','morocco','tunisia']

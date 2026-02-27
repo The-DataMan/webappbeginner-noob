@@ -180,4 +180,57 @@ animation-iteration-count: infinite;
     font-family: "Delius", cursive;
     font-weight: 400;
     font-style: normal;
+    text-align: center;
+}
+#input-section{
+    padding: 40px 40px;
+    margin-left: 800px;
+    margin-top: 100px;
+    background-color: rgb(236, 243, 255);
+    font-size: larger;
+    color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 90px black;
+    border-radius: 20px;
+}
+
+#laugh{
+    margin-left: 650px;
+    margin-top: 200px;
+    animation-name: laughing;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+}
+
+@keyframes laughing{
+    0%{}
+
+    50%{scale:3;}
+
+    100%{scale:1;}
+
+
+}
+#word {
+
+    white-space: pre;
+}
+
+#score {
+    position: fixed;      /* stays in top-left even when scrolling */
+    top: 7rem;            /* responsive spacing */
+    left: 1rem;
+
+    padding: 0.8rem 1.8rem;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+
+    background: whitesmoke;
+    color: rgb(8, 8, 8);
+
+    border-radius: 0.6rem;
+    font-weight: bold;
+    font-family: Arial;
+    
+    box-shadow: 0px 0px 90px black;
+
 }
