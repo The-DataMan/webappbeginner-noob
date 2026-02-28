@@ -10,12 +10,16 @@ game_start.addEventListener('click', function () {
 
   var gamestate=1;
   var score=0;
-
+  var time_left=10000;
     const scoresection = document.createElement("p");
-    scoresection.textContent=score;
+    scoresection.textContent="score: " + score;
     scoresection.id= 'score';
-
     document.body.appendChild(scoresection);
+
+    const timer = document.createElement("p");
+    timer.textContent="timer: \n" + time_left/1000;
+    timer.id= 'timer';
+    document.body.appendChild(timer);
 
     const hiddentext = document.createElement("p");
     hiddentext.id = 'word';
@@ -33,12 +37,30 @@ game_start.addEventListener('click', function () {
     input_sec.spellcheck = false;
     document.body.appendChild(input_sec);
 
-  //  // const wrong = new Audio('../../../audio/wrong.mp3');
-  //   audio.play();   
+  //  // const loss = new Audio('../../../audio/loss.mp3');
+  //   loss.play();   
 
   //   const right = new Audio('../../../audio/right.mp3');
   //   right.play();   
+      const intervalId = setInterval(() => {
+            console.log("Exécution répétée toutes les secondes");
+            time_left-=1000;
+            timer.textContent="timer: " + time_left/1000;
+            if  (time_left<5000){
+              timer.style.backgroundColor='red';
+            }
+            if (time_left===0){
+              if (score < 5){
+                window.location='loss.html';
+                const loss = new Audio('/audio/loss.mp3');
+                loss.play();   
+              }
+              else{
+                window.location='win.html';
+              }
 
+            }
+      }, 1000);
       var CountryName=bruh[RandomNum(bruh.length)];
       hiddentext.textContent=CountryName;
 
@@ -50,7 +72,7 @@ game_start.addEventListener('click', function () {
 
 
               score+=1;
-              scoresection.textContent = score;
+              scoresection.textContent = "score: " + score;
               scoresection.style.backgroundColor = "darkgreen";
               scoresection.style.boxShadow = "5px 10px 15px green";
               setTimeout(() => {
@@ -58,21 +80,20 @@ game_start.addEventListener('click', function () {
               scoresection.style.boxShadow= "";
               }, 500);   
 
-
-
               CountryName=bruh[RandomNum(bruh.length)];
               hiddentext.textContent=CountryName;
               
             } else{
     
               score-=1;
-              scoresection.textContent = score;
+              scoresection.textContent = "score: " + score;
               scoresection.style.backgroundColor = "darkred";
               scoresection.style.boxShadow = "5px 10px 15px red";   
               setTimeout(() => {
                 scoresection.style.backgroundColor = "";
                 scoresection.style.boxShadow = "";
               }, 500);
+
               CountryName=bruh[RandomNum(bruh.length)];
               hiddentext.textContent=CountryName;
 
