@@ -65,7 +65,7 @@ game_start.addEventListener('click', function () {
       hiddentext.textContent=CountryName;
 
       input_sec.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
+        if (event.key === "Enter" && input_sec.value.trim().length > 0) {
             console.log("User input:", input_sec.value);
           if (input_sec.value.toUpperCase() === CountryName.toUpperCase()){
               document.getElementById("input-section").value=""; 
